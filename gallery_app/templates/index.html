@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Welcome to the gallery</h1>
+{% endblock content %}
+
+{% block sidebar %}
+	<ul>
+		<li><a href="{% url 'index' %}">Main</a></li>
+		<li><a href="{% url 'list' %}">Gallery</a></li>
+	</ul>
+{% endblock sidebar %}

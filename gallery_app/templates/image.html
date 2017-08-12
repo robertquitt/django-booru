@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Image{% endblock title %}
+
+{% block content %}
+<h2>{{ image.title }}</h2>
+<a href="{{ image.image.url }}">
+	<img src="{{ image.image.url }}" style="max-height:60%; max-width:80%;">
+</a>
+<p>Uploaded: {{ image.uploaded }}</p>
+{% endblock content %}
+
+{% block sidebar %}
+<p>Tags:</p>
+{% if tags %}
+	<ul>
+		{% for tag in tags %}
+			<li><a href="{% url 'tag' pk=tag.pk %}">{{ tag.label }}</a></li>
+		{% endfor %}
+	</ul>
+{% else %}
+	No tags.
+{% endif %}
+<p>Links:</p>
+<p><a href="{% url 'list' %}">list</a></p>
+{% endblock sidebar %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<!-- List of uploaded images -->
+	<h3>Images</h3>
+	{% if images %}
+		<ul>
+			{% for image in images %}
+				<li><a href="{% url 'image' pk=image.id %}">
+					{{ image.title }} {{ image.filename }}
+				</a></li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No images.</p>
+	{% endif %}
+	<p><a href="{% url 'upload' %}">Upload</a></p>
+{% endblock content %}
+
+{% block sidebar %}
+	<h3>Tags</h3>
+	{% if tags %}
+		<ul>
+			{% for tag in tags %}
+				<li><a href="{% url 'tag' pk=tag.id %}">{{ tag.label }}</a></li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No tags.</p>
+	{% endif %}
+{% endblock sidebar %}
