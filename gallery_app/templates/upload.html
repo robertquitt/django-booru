@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+	<!-- Upload form. Note enctype attribute! -->
+	<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<p>{{ form.non_field_errors }}</p>
+
+		<p>{{ form.image_file.label_tag }} {{ form.image_file.help_text }}</p>
+
+		<p>
+			{{ form.image_file.errors }}
+			{{ form.image_file }}
+		</p>
+
+		<p><input type="submit" value="Upload"/></p>
+	</form>
+	<p>(Max upload size is 10MB)</p>
+{% endblock content %}
