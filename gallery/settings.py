@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=+uc*-d6ia@!l@q)$cf4io*x6&!%10z8+s6ta(udfeyg03p=!2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = TEMPLATE_DEBUG = THUMBNAIL_DEBUG = True
 
 ALLOWED_HOSTS = ['duck', 'quitt.us.to']
 
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gallery_app'
+    'sorl.thumbnail',
+    'gallery_app',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -85,6 +86,16 @@ DATABASES = {
 }
 
 
+# Cache
+# https://docs.djangoproject.com/en/1.11/topics/cache/
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
@@ -109,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 

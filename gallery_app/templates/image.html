@@ -1,12 +1,10 @@
-{% extends "base.html" %}
+{% extends "base_sidebar.html" %}
 
 {% block title %}Image{% endblock title %}
 
 {% block content %}
 <h2>{{ image.title }}</h2>
-<a href="{{ image.image.url }}">
-	<img src="{{ image.image.url }}" style="max-height:60%; max-width:80%;">
-</a>
+<img class="centered" src="{{ image.image.url }}" style="max-height:60%; max-width:80%;">
 <p>Uploaded: {{ image.uploaded }}</p>
 {% endblock content %}
 
@@ -19,7 +17,7 @@
 		{% endfor %}
 	</ul>
 {% else %}
-	No tags.
+	<p>No tags.</p>
 {% endif %}
 <p>Links:</p>
 <p><a href="{% url 'list' %}">list</a></p>

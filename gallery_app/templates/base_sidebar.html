@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page %}
+	<nav id="sidebar">
+	{% block sidebar %}
+		<ul>
+			<li><a href="{% url 'list' %}">list</a></li>
+			{# <li><a href="{% url 'tags' %}">tags</a></li> #}
+			<li><a href="{% url 'index' %}">index</a></li>
+		</ul>
+	{% endblock sidebar %}
+</nav><div id="content">
+	{% block content %}{% endblock content %}
+</div>
+{% endblock page %}

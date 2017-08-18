@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block content %}
+{% block page %}
 	<!-- Upload form. Note enctype attribute! -->
 	<form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
@@ -15,4 +15,4 @@
 		<p><input type="submit" value="Upload"/></p>
 	</form>
 	<p>(Max upload size is 10MB)</p>
-{% endblock content %}
+{% endblock page %}

@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
-{% block content %}
-	<h1>Welcome to the gallery</h1>
-{% endblock content %}
+{% load static %}
 
-{% block sidebar %}
-	<ul>
-		<li><a href="{% url 'index' %}">Main</a></li>
-		<li><a href="{% url 'list' %}">Gallery</a></li>
-	</ul>
-{% endblock sidebar %}
+{% block page %}
+	<link rel="stylesheet" type="text/css" href="{% static "gallery_app/solarized-light.css" %}">
+	<div style="height:10%; overflow: hidden">
+		<h1 style="text-align: center;">Welcome to the gallery</h1>
+	</div>
+	<div style="height:90%; overflow: hidden">
+		<img src="{% static "gallery_app/img/dust.jpg" %}" style="max-height: 100%; max-width: 100%; display: block; margin: 0 auto;">
+	</div>
+
+{% endblock page %}

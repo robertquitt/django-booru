@@ -3,37 +3,33 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="{% static "gallery/base.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "gallery_app/css/base.css" %}">
 		<title>{% block title %}Gallery{% endblock title %}</title>
 	</head>
 
 	<body>
-		<header>
-			{% block header %}
-				<h1>duck gallery</h1>
-			{% endblock header %}
-		</header><nav id="navbar">
-			<ul>
-				<li><a href="{% url 'index' %}">Home</a></li>
-			</ul>
-		</nav>
-		<div id="wrapper">
-			<nav id="sidebar">
-				{% block sidebar %}
-					<ul>
-						<li><a href="{% url 'list' %}">list</a></li>
-						{# <li><a href="{% url 'tags' %}">tags</a></li> #}
-						<li><a href="{% url 'index' %}">index</a></li>
-					</ul>
-				{% endblock sidebar %}
-			</nav><div id="content">
-				{% block content %}{% endblock content %}
+		{% block body %}
+			<header>
+				{% block header %}
+					<h1>duck gallery</h1>
+				{% endblock header %}
+			</header><nav id="navbar">
+				<ul>
+					<li><a href="{% url 'index' %}">Home</a></li>
+					<li><a href="{% url 'list' %}">Gallery</a></li>
+					<li><a href="{% url 'about' %}">About</a></li>
+				</ul>
+			</nav>
+			<div id="page">
+				{% block page %}
+
+				{% endblock page %}
 			</div>
-		</div>
-		<footer>
-			{% block footer %}
-				<h3>Copyright 2017 Robert Quitt</h3>
-			{% endblock footer %}
-		</footer>
+			<footer>
+				{% block footer %}
+					<p>Copyright 2017 Robert Quitt</p>
+				{% endblock footer %}
+			</footer>
+		{% endblock body %}
 	</body>
 </html>

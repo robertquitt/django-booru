@@ -1,6 +1,7 @@
 import os
 
 from django.db import models
+from sorl.thumbnail import ImageField
 
 try:
     from PIL import Image, ImageOps
@@ -15,6 +16,11 @@ def image_upload_path(instance, filename):
     return 'images/{0:03d}/{1:06d}-{2}{3}'.format(count//100, count, head, ext)
 
 
+class Media(models.Model):
+    class Meta:
+        abstract = True
+
+
 class Text(models.Model):
     text = models.TextField()
     uploaded = models.DateTimeField(auto_now_add=True, editable=False)
@@ -22,7 +28,7 @@ class Text(models.Model):
 
 class Image(models.Model):
     title = models.CharField(max_length=128)
-    image = models.ImageField(upload_to=image_upload_path, editable=False)
+    image = ImageField(upload_to=image_upload_path)
     # thumb = models.ImageField(upload_to='images/thumbnails/', editable=False)
     filename = models.CharField(max_length=256, editable=False)
     uploaded = models.DateTimeField(auto_now_add=True, editable=False)
