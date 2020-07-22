@@ -3,12 +3,6 @@
 {% load static %}
 
 {% block page %}
-	<link rel="stylesheet" type="text/css" href="{% static "gallery_app/solarized-light.css" %}">
-	<div style="height:10%; overflow: hidden">
-		<h1 style="text-align: center;">Welcome to the gallery</h1>
-	</div>
-	<div style="height:90%; overflow: hidden">
-		<img src="{% static "gallery_app/img/dust.jpg" %}" style="max-height: 100%; max-width: 100%; display: block; margin: 0 auto;">
-	</div>
-
+<h1 id="header" class="centered">Welcome to duckbooru</h1>
+<img id="image" src="{% static "gallery_app/img/dust.jpg" %}" class="centered">
 {% endblock page %}

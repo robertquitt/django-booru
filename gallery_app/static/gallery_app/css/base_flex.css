@@ -1,0 +1,44 @@
+body {
+    font-family: Arial;
+    max-width: 95%;
+
+    height: 100%;
+    margin: 0 auto;
+}
+
+header, main, nav, aside, footer {
+    flex: 1 100%;
+}
+
+nav ul {
+    margin: 0;
+    background: cornflowerblue;
+    display: flex;
+    flex-direction: row;
+}
+
+nav a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+}
+
+nav a:hover {
+    background-color: lightgreen;
+}
+
+nav li {
+    list-style: none;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-img {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}

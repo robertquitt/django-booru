@@ -1,35 +1,38 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="{% static "gallery_app/css/base.css" %}">
-		<title>{% block title %}Gallery{% endblock title %}</title>
-	</head>
-
-	<body>
-		{% block body %}
-			<header>
-				{% block header %}
-					<h1>duck gallery</h1>
-				{% endblock header %}
-			</header><nav id="navbar">
-				<ul>
-					<li><a href="{% url 'index' %}">Home</a></li>
-					<li><a href="{% url 'list' %}">Gallery</a></li>
-					<li><a href="{% url 'about' %}">About</a></li>
-				</ul>
-			</nav>
-			<div id="page">
-				{% block page %}
-
-				{% endblock page %}
-			</div>
-			<footer>
-				{% block footer %}
-					<p>Copyright 2017 Robert Quitt</p>
-				{% endblock footer %}
-			</footer>
-		{% endblock body %}
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static "gallery_app/css/base.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "gallery_app/css/bulma.min.css" %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Gallery{% endblock title %}</title>
+  </head>
+  <body>
+    {% block body %}
+    <header>
+      {% block header %}
+      <h1 class="header">duckbooru</h1>
+      {% endblock header %}
+    </header>
+    <nav id="navbar">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'list' %}">Listing</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'upload' %}">Upload</a></li>
+      </ul>
+    </nav>
+    <div id="page">
+      {% block page %}
+      {% endblock page %}
+    </div>
+    <footer>
+      {% block footer %}
+      <p></p>
+      {% endblock footer %}
+    </footer>
+    {% endblock body %}
+  </body>
 </html>
+{# vim: set et sw=2: #}

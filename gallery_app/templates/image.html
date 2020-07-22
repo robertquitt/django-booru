@@ -6,19 +6,18 @@
 <h2>{{ image.title }}</h2>
 <img class="centered" src="{{ image.image.url }}" style="max-height:60%; max-width:80%;">
 <p>Uploaded: {{ image.uploaded }}</p>
+<p>Original filename: {{ image.filename }}</p>
 {% endblock content %}
 
 {% block sidebar %}
-<p>Tags:</p>
+<h3>Tags</h3>
 {% if tags %}
-	<ul>
+<ul>
 		{% for tag in tags %}
-			<li><a href="{% url 'tag' pk=tag.pk %}">{{ tag.label }}</a></li>
+		<li><a href="{% url 'tag' pk=tag.pk %}">{{ tag.label }}</a></li>
 		{% endfor %}
-	</ul>
+</ul>
 {% else %}
-	<p>No tags.</p>
+<p>Image has no tags.</p>
 {% endif %}
-<p>Links:</p>
-<p><a href="{% url 'list' %}">list</a></p>
 {% endblock sidebar %}

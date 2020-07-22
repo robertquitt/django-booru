@@ -3,31 +3,45 @@
 {% load thumbnail %}
 
 {% block content %}
-	<!-- List of uploaded images -->
-	<h3>Images</h3>
-	{% if images %}
-		<ul>
-			{% for image in images %}
-				{% thumbnail image.image '150x150' crop='center' as im %}
-					<a href="{% url 'image' image.id %}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
-				{% endthumbnail %}
-			{% endfor %}
-		</ul>
-	{% else %}
-		<p>No images.</p>
-	{% endif %}
-	<p><a href="{% url 'upload' %}">Upload</a></p>
+<h3>Images</h3>
+{% if images %}
+<ul>
+	{% for image in images %}
+	{% thumbnail image.image '150x150' crop='center' as im %}
+	<a href="{% url 'image' image.id %}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"></a>
+	{% endthumbnail %}
+	{% endfor %}
+</ul>
+{% else %}
+<p>No images.</p>
+{% endif %}
 {% endblock content %}
 
 {% block sidebar %}
-	<h3>Tags</h3>
-	{% if tags %}
-		<ul>
-			{% for tag in tags %}
-				<li><a href="{% url 'tag' tag.id %}">{{ tag.label }}</a> ({{ tag.images.count }})</li>
-			{% endfor %}
-		</ul>
-	{% else %}
-		<p>No tags.</p>
-	{% endif %}
+<h3>Tags</h3>
+{% if tags %}
+<ul>
+	{% for tag in tags %}
+	<li><a href="{% url 'tag' tag.id %}">{{ tag.label }}</a>&nbsp({{ tag.images.count }})</li>
+	{% endfor %}
+</ul>
+{% else %}
+<p>No tags.</p>
+{% endif %}
 {% endblock sidebar %}
+
+{% block footer %}
+<div class="pagination">
+	<span class="step-links">
+		{% if images.has_previous %}
+		<a href="?page={{ images.previous_page_number }}">previous</a>
+		{% endif %}
+		<span class="current">
+			Page {{ images.number }} of {{ images.paginator.num_pages }}.
+		</span>
+		{% if images.has_next %}
+		<a href="?page={{ images.next_page_number }}">next</a>
+		{% endif %}
+	</span>
+</div>
+{% endblock %}

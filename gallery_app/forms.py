@@ -5,5 +5,5 @@ from django import forms
 
 class ImageUploadForm(forms.Form):
     image_file = forms.ImageField(
-        label='Select a file'
+        label='Select a file',
     )

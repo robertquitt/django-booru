@@ -1,0 +1,4 @@
+Django~=2.2
+Pillow==4.2.1
+sorl-thumbnail
+python-memcached

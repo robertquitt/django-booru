@@ -1,117 +1,103 @@
 header {
-    height: 7.5%;
-    width: 100%;
-    /*display: inline-block;*/
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    vertical-align: middle;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	vertical-align: middle;
 }
 
 header * {
-    margin: 5px;
+	margin: 5px;
 }
 
 #navbar {
-    height: 5%;
-    margin: 0;
-    padding: 0;
-    background-color: LightBlue;
+	height: 5%;
+	margin: 0;
+	padding: 0;
+	background-color: LightBlue;
 }
 
 #navbar ul {
-    text-align: left;
-    list-style-type: none;
-    display: inline-block;
-    margin: 0;
-    padding: 5px;
+	text-align: left;
+	list-style-type: none;
+	display: inline-block;
+	margin: 0;
+	padding: 5px;
 }
 
 #navbar li {
-    text-align: center;
-    vertical-align: middle;
-    display: inline-block;
-    paddin: 5px;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
 }
 
 #page {
-    height: 82.5%;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
 }
 
 #sidebar {
-    vertical-align: top;
-    width:  10%;
-    height: 100%;
-    margin: 0;
-    display: inline-block;
+	vertical-align: top;
+	width:  10%;
+	height: 100%;
+	margin: 0;
+	display: inline-block;
+	float: left;
 }
 
 #sidebar * {
-    padding-left: 5px;
+	padding-left: 5px;
 }
 
 #sidebar ul {
-    list-style-type: none;
-    display: block;
-    margin:0;
-    padding:0;
+	list-style-type: none;
+	display: block;
+	margin:0;
+	padding:0;
 }
 
 #sidebar li {
-    margin: 0;
-    padding: 5px;
-    display: block;
+	margin: 0;
+	padding: 5px;
+	display: block;
 }
 
 #content {
-    width: 90%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
+	width: 90%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
 }
 
 footer {
-    width: 100%;
-    height: 5%;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    text-align: center;
+	width: 100%;
+	height: 5%;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
 }
 
 footer * {
-    margin: 5px;
-}
-
-/*body, html {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    width: 100vw;
-    font-family: Arial;
-}
-*/
-* {
-    overflow: hidden;
+	margin: 5px;
 }
 
 img.centered {
-    display: block;
-    margin: 0 auto;
+	display: block;
+	margin: 0 auto;
+}
+h1.centered {
+	text-align: center;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
-    color: #333;
-    background: #fff;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+	color: #333;
+	background: #fff;
 }
+/* vim:set noet ts=4 sw=4: */
